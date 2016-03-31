@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <title>화면에 감추지만, 스크린리더는 읽을 수 있는 클래스</title>
+    <style>
+        .a11y-hidden {
+            overflow: hidden;
+            position: absolute;
+            clip:     rect(0 0 0 0); /* IE 6,7 */
+            clip:     rect(0,0,0,0);
+            width:    1px;
+            height:   1px;
+            margin:   -1px;
+            border:   0;
+            padding:  0;
+        }
+        .a11y-hidden.focusable:focus {
+            overflow: visible;
+            position: static;
+            clip:     auto;
+            width:    auto;
+            height:   auto;
+            margin:   0;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="http://placehold.it/300x200/333/fff" alt="">
+
+    <p class="a11y-hidden">야무 한글 로렘입숨 로렘입숨이란? 디자인을 위한 더미 텍스트!. 피어나는 아름다운 숨 죽여도, 가슴을 사명으로 만들?</p>
+
+</body>
+</html>
